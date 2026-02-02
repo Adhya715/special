@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manan, Will You Be My Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #fff1f5, #fffaf0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 420px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    h1 {
+      color: #ff6f91;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #ff9aa2;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 12px 22px;
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yes {
+      background: #ff6f91;
+      color: white;
+    }
+
+    #yes:hover {
+      background: #ff4d73;
+    }
+
+    #no {
+      background: #ffe5ec;
+      color: #ff6f91;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #ff9aa2;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 18px;
+      animation: fall linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Happy Birthday, Manan 🎂💖</h1>
+    <h2>Before your day officially begins…</h2>
+
+    <p>
+      I know your birthday is coming up, and honestly… I feel like the luckiest person alive because I have you.
+      Even from miles away, you still manage to make my heart race, my cheeks hurt from smiling,
+      and my mind wander in very distracting ways.
+      <br><br>
+      So before your day officially begins, I just want to ask—
+      <br><br>
+      <strong>Will you be my Valentine?</strong>
+      <br><br>
+      Because I already miss you, want you, and plan on stealing you properly
+      when distance finally stops being rude to us.
+    </p>
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClick()">Yes 💘</button>
+      <button id="no" onclick="noClick()">No 🙈</button>
+    </div>
+
+    <div class="footer">
+      Forever yours,<br>
+      Adhya 💗<br><br>
+      <em>ps. I love you 3000 ♾️</em>
+    </div>
+  </div>
+
+  <script>
+    function yesClick() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          background:linear-gradient(180deg,#fff1f5,#fffaf0);
+          text-align:center;
+          font-family:Poppins,sans-serif;
+          padding:20px;">
+          <h1 style="color:#ff6f91;">It’s a YES 💕</h1>
+          <p style="max-width:420px;color:#555;font-size:18px;line-height:1.6;">
+            Congratulations, you just made me the happiest girlfriend alive.
+            <br><br>
+            Happy Birthday, my favorite person 🎂💖  
+            I hope this year gives you everything you deserve and a little extra love from me.
+            <br><br>
+            Valentine or not, you’re already mine — today, tomorrow, always.
+          </p>
+          <p style="margin-top:15px;color:#ff9aa2;">
+            — Adhya 💗
+          </p>
+        </div>
+      `;
+    }
+
+    function noClick() {
+      alert("psst… you already are my Valentine. No isn’t an option 😌💘");
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = Math.random() > 0.5 ? "💗" : "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
